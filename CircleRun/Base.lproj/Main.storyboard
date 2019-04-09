@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CircleRun" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="b2k-Sw-0OB">
+                                <rect key="frame" x="15" y="29" width="250" height="209"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ULs-3K-J7j">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="163"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="meF-xn-Nvb">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="163"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Session ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Khq-1N-TIb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="92" height="35"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otl-q4-R4c">
+                                                        <rect key="frame" x="0.0" y="43" width="140" height="24"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session length" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEJ-B8-4Kn" userLabel="Session Length">
+                                                        <rect key="frame" x="0.0" y="75" width="128" height="24"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time passed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cZ-Zr-Wgc">
+                                                        <rect key="frame" x="0.0" y="107" width="111" height="24"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6C-OA-Qjl" userLabel="Completed">
+                                                        <rect key="frame" x="0.0" y="139" width="50.5" height="24"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="0SX-6i-Wvp"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sZX-31-bnU">
+                                                <rect key="frame" x="150" y="0.0" width="100" height="163"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ID" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QC4-Nm-e6v" userLabel="SessionIDField">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="Nq3-ei-lfe"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KwJ-Ud-niS" userLabel="SessionNumField">
+                                                        <rect key="frame" x="0.0" y="38" width="100" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="qOf-AM-enl"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="30.00" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0pA-Xp-Uyb" userLabel="SessionLengthField">
+                                                        <rect key="frame" x="0.0" y="76" width="100" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="TKc-V6-JLr"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1No-j3-nVn" userLabel="TimePassedText">
+                                                        <rect key="frame" x="0.0" y="114" width="34.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03Q-FO-3UG" userLabel="CompletedText">
+                                                        <rect key="frame" x="0.0" y="142.5" width="34.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZ0-ea-0vl">
+                                        <rect key="frame" x="96" y="163" width="58" height="46"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <state key="normal" title="Start">
+                                            <color key="titleShadowColor" red="0.11690356111331772" green="0.0" blue="0.48775501943005184" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yaw-Ja-Ufu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ULs-3K-J7j" firstAttribute="top" secondItem="b2k-Sw-0OB" secondAttribute="top" id="n5j-BC-kdW"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Connected to server" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCd-Wq-Vcz" userLabel="Connected">
+                                <rect key="frame" x="20" y="727" width="209" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="11999" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AuH-fp-8I8" userLabel="Port number">
+                                <rect key="frame" x="149" y="689" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="130.237.218.82" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h7R-9B-b0X" userLabel="IP address">
+                                <rect key="frame" x="20" y="689" width="126" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="b2k-Sw-0OB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="9" id="ArL-u6-x1Y"/>
+                            <constraint firstItem="b2k-Sw-0OB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="9" id="dHD-BJ-Fgf"/>
+                            <constraint firstItem="b2k-Sw-0OB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="jur-eO-OSR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="completedLabel" destination="03Q-FO-3UG" id="cAI-gT-cpT"/>
+                        <outlet property="ipAddress" destination="h7R-9B-b0X" id="7to-4e-8KQ"/>
+                        <outlet property="ipPort" destination="AuH-fp-8I8" id="FgT-Lh-UeC"/>
+                        <outlet property="messageField" destination="ZCd-Wq-Vcz" id="fhr-2k-O4h"/>
+                        <outlet property="sessionIdField" destination="QC4-Nm-e6v" id="faC-q7-UoV"/>
+                        <outlet property="sessionLenField" destination="0pA-Xp-Uyb" id="ELN-GB-e1g"/>
+                        <outlet property="sessionNumField" destination="KwJ-Ud-niS" id="kAA-5B-1Py"/>
+                        <outlet property="timePassedLabel" destination="1No-j3-nVn" id="nKI-i7-iUW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.5234375" y="133.59375"/>
+        </scene>
+    </scenes>
+</document>
