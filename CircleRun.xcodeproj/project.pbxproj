@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6B245D9D22566B8D00D25307 /* AudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B245D9C22566B8D00D25307 /* AudioKit.framework */; };
-		6B245DA022566C3800D25307 /* AudioKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B245D9F22566C3800D25307 /* AudioKitUI.framework */; };
 		6B806D33203D65D3004C7432 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B806D32203D65D3004C7432 /* AppDelegate.swift */; };
 		6B806D35203D65D3004C7432 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B806D34203D65D3004C7432 /* ViewController.swift */; };
 		6B806D38203D65D3004C7432 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B806D36203D65D3004C7432 /* Main.storyboard */; };
@@ -44,8 +42,6 @@
 
 /* Begin PBXFileReference section */
 		6B245D8122564F2600D25307 /* CircleRun2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircleRun2.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B245D9C22566B8D00D25307 /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = "../AudioKit-iOS/AudioKit.framework"; sourceTree = "<group>"; };
-		6B245D9F22566C3800D25307 /* AudioKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKitUI.framework; path = "../AudioKit-iOS/AudioKitUI.framework"; sourceTree = "<group>"; };
 		6B806D2F203D65D3004C7432 /* CircleRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircleRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B806D32203D65D3004C7432 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B806D34203D65D3004C7432 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +54,7 @@
 		6B806D49203D65D3004C7432 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BC433D1206BD39500218500 /* Socket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = SOURCE_ROOT; };
 		6BD62B44203E03270080FBF0 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		7F84C6B62273044400F33ACF /* CircleRun-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CircleRun-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +69,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B245DA022566C3800D25307 /* AudioKitUI.framework in Frameworks */,
-				6B245D9D22566B8D00D25307 /* AudioKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,8 +85,6 @@
 		6B245D9B22566B8C00D25307 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6B245D9F22566C3800D25307 /* AudioKitUI.framework */,
-				6B245D9C22566B8D00D25307 /* AudioKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -99,6 +92,8 @@
 		6B806D26203D65D3004C7432 = {
 			isa = PBXGroup;
 			children = (
+				7F84C6B52273044400F33ACF /* SwiftSocket */,
+				6BC433D1206BD39500218500 /* Socket.swift */,
 				6B806D31203D65D3004C7432 /* CircleRun */,
 				6B806D46203D65D3004C7432 /* CircleRunTests */,
 				6B806D30203D65D3004C7432 /* Products */,
@@ -126,7 +121,6 @@
 				6B806D39203D65D3004C7432 /* Assets.xcassets */,
 				6B806D3B203D65D3004C7432 /* LaunchScreen.storyboard */,
 				6B806D3E203D65D3004C7432 /* Info.plist */,
-				6BC433D1206BD39500218500 /* Socket.swift */,
 			);
 			path = CircleRun;
 			sourceTree = "<group>";
@@ -138,6 +132,14 @@
 				6B806D49203D65D3004C7432 /* Info.plist */,
 			);
 			path = CircleRunTests;
+			sourceTree = "<group>";
+		};
+		7F84C6B52273044400F33ACF /* SwiftSocket */ = {
+			isa = PBXGroup;
+			children = (
+				7F84C6B62273044400F33ACF /* CircleRun-Bridging-Header.h */,
+			);
+			path = SwiftSocket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -483,9 +485,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R3GUJR8J9T;
+				DEVELOPMENT_TEAM = F9UH6W2K2Q;
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "/Users/celle/Documents/Swift/AudioKit-iOS";
 				INFOPLIST_FILE = CircleRun/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				"OTHER_LDFLAGS[arch=*]" = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = se.kth.CircleRun;
@@ -505,9 +508,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R3GUJR8J9T;
+				DEVELOPMENT_TEAM = F9UH6W2K2Q;
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "/Users/celle/Documents/Swift/AudioKit-iOS";
 				INFOPLIST_FILE = CircleRun/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				"OTHER_LDFLAGS[arch=*]" = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = se.kth.CircleRun;

@@ -9,8 +9,8 @@
 import UIKit
 import QuartzCore
 import CoreMotion
-import AudioKit
-import AudioKitUI
+//import AudioKit
+//import AudioKitUI
 
 class ViewController: UIViewController {
     
@@ -43,26 +43,26 @@ class ViewController: UIViewController {
     
     let socketLink = SocketLink()
   
-    var oscillator1 = AKOscillator()
-    var oscillator2 = AKOscillator()
-    var mixer = AKMixer()
-    
-    required init?(coder aDecoder: NSCoder) {
-      super.init(coder: aDecoder)
-      mixer = AKMixer(oscillator1, oscillator2)
-    
-      // Cut the volume in half since we have two oscillators
-      mixer.volume = 0.5
-      AudioKit.output = mixer
-      do {
-        AKSettings.playbackWhileMuted = true
-        try AudioKit.start()
-        oscillator1.frequency = random(in: 220 ... 880)
-        oscillator2.frequency = random(in: 220 ... 880)
-      } catch {
-        AKLog("AudioKit did not start!")
-      }
-    }
+//    var oscillator1 = AKOscillator()
+//    var oscillator2 = AKOscillator()
+//    var mixer = AKMixer()
+//
+//    required init?(coder aDecoder: NSCoder) {
+//      super.init(coder: aDecoder)
+//      mixer = AKMixer(oscillator1, oscillator2)
+//
+//      // Cut the volume in half since we have two oscillators
+//      mixer.volume = 0.5
+//      AudioKit.output = mixer
+//      do {
+//        AKSettings.playbackWhileMuted = true
+//        try AudioKit.start()
+//        oscillator1.frequency = random(in: 220 ... 880)
+//        oscillator2.frequency = random(in: 220 ... 880)
+//      } catch {
+//        AKLog("AudioKit did not start!")
+//      }
+//    }
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,8 +111,8 @@ class ViewController: UIViewController {
             sender.setTitle("Start", for: .normal)
             running = false
             socketLink.stopSession()
-            oscillator1.stop()
-            oscillator2.stop()
+//            oscillator1.stop()
+//            oscillator2.stop()
         } else {
             initTimeStamp = displayLink.timestamp
             lastTimeStamp = displayLink.timestamp
@@ -135,8 +135,8 @@ class ViewController: UIViewController {
             socketLink.setupNetworkCommunication(ipAddr: ipAddress.text!, ipPort: port!)
             let message = "celle"
             socketLink.startMessage(message: message)
-            oscillator1.start()
-            oscillator2.start()
+//            oscillator1.start()
+//            oscillator2.start()
         }
     }
     
@@ -150,8 +150,8 @@ class ViewController: UIViewController {
                 button.setTitle("Start", for: .normal)
                 running = false
                 socketLink.stopSession()
-                oscillator1.stop()
-                oscillator2.stop()
+//                oscillator1.stop()
+//                oscillator2.stop()
             }
             updateMotion(t: displayLink.timestamp - lastTimeStamp)
             updateScore()
@@ -221,8 +221,8 @@ class ViewController: UIViewController {
                 self.yv = -self.yv*0.3
                 self.yp = -lim + (1.0 - frac)*self.yv*t
             }
-            self.oscillator1.frequency = pow(2.0, self.xp-0.25)*440.0
-            self.oscillator2.frequency = pow(2.0, self.yp+0.25)*440.0
+//            self.oscillator1.frequency = pow(2.0, self.xp-0.25)*440.0
+//            self.oscillator2.frequency = pow(2.0, self.yp+0.25)*440.0
             //let str:String = String(format: "%0.2f %0.2f %0.2f %0.2f %0.2f %0.2f", self.xp, self.yp, self.xv, self.yv, slopeX, slopeY)
             //print(str)
         }
