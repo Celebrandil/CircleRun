@@ -100,7 +100,7 @@ class ViewController: UIViewController {
             running = false
             socketLink.stopSession()
 
-            csound.stop()
+            stopCsound()
         } else {
             initTimeStamp = displayLink.timestamp
             lastTimeStamp = displayLink.timestamp
@@ -124,7 +124,7 @@ class ViewController: UIViewController {
             let message = "celle"
             socketLink.startMessage(message: message)
 
-            csound.play(self.csdFile)
+            playCsound()
         }
     }
     
@@ -139,7 +139,7 @@ class ViewController: UIViewController {
                 running = false
                 socketLink.stopSession()
 
-                csound.stop()
+                stopCsound()
             }
             updateMotion(t: displayLink.timestamp - lastTimeStamp)
             updateScore()
@@ -210,7 +210,7 @@ class ViewController: UIViewController {
                 self.yp = -lim + (1.0 - frac)*self.yv*t
             }
 
-            if !csdPtr.isEmpty {
+            if !csdPtr.isEmpty && self.running {
                 self.csdPtr[T_AX]?.pointee = Float(deviceMotion.userAcceleration.x)
                 self.csdPtr[T_AY]?.pointee = Float(deviceMotion.userAcceleration.y)
                 self.csdPtr[T_GX]?.pointee = Float(deviceMotion.rotationRate.x)
@@ -259,8 +259,20 @@ class ViewController: UIViewController {
 
     func setupCsound() {
         self.csdFile = Bundle.main.path(forResource: "Vincent2", ofType: "csd")
+        csound.stop()
         csound = CsoundObj()
         csound.addBinding(self)
+        csound.play(self.csdFile)
+    }
+
+    func playCsound() {
+        csound.sendScore("i1 0 36000")
+    }
+
+    func stopCsound() {
+        for cPtr in self.csdPtr {
+            cPtr?.pointee = 0
+        }
     }
 }
 
@@ -288,10 +300,12 @@ extension ViewController: CsoundBinding {
              * Ball position y allowed from 30 to 735 px
              * Net ball acceleration (px/s^2) and velocity (px/s) are needed
              */
-            self.csdPtr[B_PX]?.pointee = Float(self.xp)*1000 + 500 // ball position x (px)
-            self.csdPtr[B_PY]?.pointee = Float(self.yp)*1000 + 500 // ball position y (px)
-            self.csdPtr[B_ACC]?.pointee = Float(sqrt(self.xa*self.xa + self.ya*self.ya)) // net ball acceleration
-            self.csdPtr[B_VEL]?.pointee = Float(sqrt(self.xv*self.xv + self.yv*self.yv)) // net ball velocity
+            if self.running {
+                self.csdPtr[B_PX]?.pointee = Float(self.xp+1)*765 // ball position x (px)
+                self.csdPtr[B_PY]?.pointee = Float(self.yp+1)*765 // ball position y (px)
+                self.csdPtr[B_ACC]?.pointee = Float(sqrt(self.xa*self.xa + self.ya*self.ya)) // net ball acceleration
+                self.csdPtr[B_VEL]?.pointee = Float(sqrt(self.xv*self.xv + self.yv*self.yv)) // net ball velocity
+            }
         }
     }
 }
