@@ -266,7 +266,7 @@ class ViewController: UIViewController {
     }
 
     func playCsound() {
-        csound.sendScore("i1 0 36000")
+        csound.sendScore("i1 0 2000")
     }
 
     func stopCsound() {
@@ -301,8 +301,8 @@ extension ViewController: CsoundBinding {
              * Net ball acceleration (px/s^2) and velocity (px/s) are needed
              */
             if self.running {
-                self.csdPtr[B_PX]?.pointee = Float(self.xp+1)*765 // ball position x (px)
-                self.csdPtr[B_PY]?.pointee = Float(self.yp+1)*765 // ball position y (px)
+                self.csdPtr[B_PX]?.pointee = (Float(self.xp+1)*765)/2 // ball position x (px)
+                self.csdPtr[B_PY]?.pointee = (Float(self.yp+1)*765)/2 // ball position y (px)
                 self.csdPtr[B_ACC]?.pointee = Float(sqrt(self.xa*self.xa + self.ya*self.ya)) // net ball acceleration
                 self.csdPtr[B_VEL]?.pointee = Float(sqrt(self.xv*self.xv + self.yv*self.yv)) // net ball velocity
             }
